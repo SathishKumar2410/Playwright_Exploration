@@ -1,0 +1,19 @@
+{
+  "name": "playwright_exploration",
+  "version": "1.0.0",
+  "main": "LoginTest.spec.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.7.5",
+    "allure-playwright": "^3.0.6"
+  },
+  "dependencies": {
+    "playwright": "^1.48.1",
+    "xlsx": "^0.17.5"
+  }
+}

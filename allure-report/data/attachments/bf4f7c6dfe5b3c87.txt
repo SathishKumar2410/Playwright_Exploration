@@ -1,0 +1,3 @@
+Path --> D:\Exploration\Playwright\Playwright_Exploration\resources\TestData.xlsx
+Username : locked_out_user, Password : secret_sauce
+getByPlaceholder('Username')

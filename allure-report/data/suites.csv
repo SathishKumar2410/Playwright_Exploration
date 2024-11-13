@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4125","Login into the application","chromium","Thu Nov 07 17:55:38 IST 2024","passed","Thu Nov 07 17:55:42 IST 2024","","LoginTest.spec.js","",""
+"","6119","Login into the application","Mobile Safari","Thu Nov 07 17:55:58 IST 2024","passed","Thu Nov 07 17:56:05 IST 2024","","LoginTest.spec.js","",""
+"","4015","Login into the application","Mobile Chrome","Thu Nov 07 17:55:56 IST 2024","passed","Thu Nov 07 17:56:00 IST 2024","","LoginTest.spec.js","",""
+"","3628","Login into the application","Microsoft Edge","Thu Nov 07 17:56:05 IST 2024","passed","Thu Nov 07 17:56:09 IST 2024","","LoginTest.spec.js","",""
+"","8845","Login into the application","firefox","Thu Nov 07 17:55:38 IST 2024","passed","Thu Nov 07 17:55:47 IST 2024","","LoginTest.spec.js","",""
+"","2939","Login into the application","Google Chrome","Thu Nov 07 17:56:10 IST 2024","passed","Thu Nov 07 17:56:13 IST 2024","","LoginTest.spec.js","",""
+"","7605","Login into the application","webkit","Thu Nov 07 17:55:48 IST 2024","passed","Thu Nov 07 17:55:55 IST 2024","","LoginTest.spec.js","",""
