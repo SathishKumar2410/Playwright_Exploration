@@ -14,7 +14,7 @@ class TestDataReader{
 
      getTestDataFromExcelSheet(sheetName, testCaseId) {
         try {
-            const path = `${process.cwd()}\\resources\\TestData.xlsx`;
+            const path = `${process.cwd()}/resources/TestData.xlsx`;
             console.log(`Path --> ${path}`);
 
             // Load the workbook
