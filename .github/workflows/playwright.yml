@@ -1,39 +1,56 @@
-name: Playwright CI
+name: Playwright Tests
 
 on:
   push:
     branches:
-      - main  # Trigger on push to main branch
+      - main  # Trigger on pushes to the 'main' branch
   pull_request:
     branches:
-      - main  # Trigger on pull requests targeting main branch
+      - main  # Trigger on pull requests to the 'main' branch
 
 jobs:
-  test:
-    runs-on: ubuntu-latest  # This uses the latest Ubuntu runner
-
+  playwright-test:
+    runs-on: ubuntu-latest  # Choose the runner (Ubuntu, macOS, or Windows)
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  # Checkout the code in the repository
+    # Step 1: Check out the repository
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # You can choose the version of Node.js you're using
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Use the appropriate Node.js version
 
-      - name: Install dependencies
-        run: |
-          npm install  # Install project dependencies
-          npx playwright install  # Install Playwright browsers (Chromium, Firefox, WebKit)
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        npm ci  # or 'npm install' if you don't have a lock file
 
-      - name: Run Playwright tests
-        run: |
-          npx playwright test  # Run your Playwright tests
+    # Step 4: Install Playwright browsers (needed for running tests)
+    - name: Install Playwright Browsers
+      run: |
+        npx playwright install --with-deps  # This installs necessary browsers like Chromium, Firefox, WebKit
 
-      - name: Upload Playwright trace artifacts (optional)
-        if: failure()  # Upload only if the tests fail
-        uses: actions/upload-artifact@v3
-        with:
-          name: playwright-trace
-          path: test-results/*  # Adjust the path as per your Playwright test results folder
+    # Step 5: Run Playwright tests
+    - name: Run Playwright Tests
+      run: |
+        npx playwright test  # Runs Playwright tests
+      continue-on-error: false  # Ensure the job fails if tests fail
 
+    # Step 6: Upload the trace.zip file as an artifact (optional, if using tracing)
+    - name: Upload trace file
+      if: failure()  # Upload only if tests fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-trace
+        path: trace.zip
+
+    # Step 7: Publish test results in GitHub Actions UI
+    - name: Publish Test Results
+      if: success()  # Only publish if tests succeed
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-test-results
+        path: ./test-results  # Path where test result reports are saved
