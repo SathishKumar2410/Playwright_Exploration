@@ -1,0 +1,21 @@
+Error reading the excel file: TypeError: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.openSync (node:fs:571:10)
+    at Object.readFileSync (node:fs:452:35)
+    at read_binary (D:\Exploration\Playwright\Playwright_Exploration\node_modules\xlsx\xlsx.js:2730:44)
+    at readSync (D:\Exploration\Playwright\Playwright_Exploration\node_modules\xlsx\xlsx.js:21969:69)
+    at readFileSync (D:\Exploration\Playwright\Playwright_Exploration\node_modules\xlsx\xlsx.js:22009:9)
+    at TestDataReader.getTestDataFromExcelSheet (D:\Exploration\Playwright\Playwright_Exploration\utils\TestDataReader.js:28:38)
+    at D:\Exploration\Playwright\Playwright_Exploration\tests\LoginTest.spec.js:42:27
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:338:15
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:285:17
+    at TimeoutManager.withRunnable (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\timeoutManager.js:64:34)
+    at TestInfoImpl._runAsStage (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:283:34)
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:330:22
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:285:11
+    at TimeoutManager.withRunnable (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\timeoutManager.js:52:27)
+    at TestInfoImpl._runAsStage (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:283:7)
+    at WorkerMain._runTest (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:280:5)
+    at WorkerMain.runTestGroup (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:204:11)
+    at process.<anonymous> (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\common\process.js:95:22) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
