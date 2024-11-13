@@ -42,15 +42,15 @@ jobs:
     # Step 6: Upload the trace.zip file as an artifact (optional, if using tracing)
     - name: Upload trace file
       if: failure()  # Upload only if tests fail
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: playwright-trace
+        name: playwright-report
         path: trace.zip
 
     # Step 7: Publish test results in GitHub Actions UI
     - name: Publish Test Results
       if: success()  # Only publish if tests succeed
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: playwright-test-results
         path: ./test-results  # Path where test result reports are saved
