@@ -36,7 +36,7 @@ test('Add items to the cart', async ({ page }) => {
 
 });
 
-test('Login into the application2', async ({ page }) => {
+test.only('Login into the application2', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const testData = new TestDataReader(page);
     const test = testData.getTestDataFromExcelSheet('Sheet1', 'TC002');

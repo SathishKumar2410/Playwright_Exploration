@@ -1,0 +1,14 @@
+Error reading the excel file: ReferenceError: path is not defined
+    at TestDataReader.getTestDataFromExcelSheet (D:\Exploration\Playwright\Playwright_Exploration\utils\TestDataReader.js:26:39)
+    at D:\Exploration\Playwright\Playwright_Exploration\tests\LoginTest.spec.js:42:27
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:338:15
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:285:17
+    at TimeoutManager.withRunnable (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\timeoutManager.js:64:34)
+    at TestInfoImpl._runAsStage (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:283:34)
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:330:22
+    at D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:285:11
+    at TimeoutManager.withRunnable (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\timeoutManager.js:52:27)
+    at TestInfoImpl._runAsStage (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\testInfo.js:283:7)
+    at WorkerMain._runTest (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:280:5)
+    at WorkerMain.runTestGroup (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\worker\workerMain.js:204:11)
+    at process.<anonymous> (D:\Exploration\Playwright\Playwright_Exploration\node_modules\playwright\lib\common\process.js:95:22)
