@@ -1,0 +1,39 @@
+name: Playwright CI
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # This uses the latest Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checkout the code in the repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # You can choose the version of Node.js you're using
+
+      - name: Install dependencies
+        run: |
+          npm install  # Install project dependencies
+          npx playwright install  # Install Playwright browsers (Chromium, Firefox, WebKit)
+
+      - name: Run Playwright tests
+        run: |
+          npx playwright test  # Run your Playwright tests
+
+      - name: Upload Playwright trace artifacts (optional)
+        if: failure()  # Upload only if the tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-trace
+          path: test-results/*  # Adjust the path as per your Playwright test results folder
+
