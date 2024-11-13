@@ -1,5 +1,5 @@
 import { readFile, utils } from 'xlsx';
-class TestDataReader{
+class TestDataReader {
     readExcelInJson(sheetName, testCaseId) {
         const filePath = `${process.cwd()}\\resources\\TestData.xlsx`;
         console.log(`Path --> ${filePath}`);
@@ -12,9 +12,10 @@ class TestDataReader{
         return filteredData; // Returns an array of objects
     }
 
-     getTestDataFromExcelSheet(sheetName, testCaseId) {
+    getTestDataFromExcelSheet(sheetName, testCaseId) {
         try {
-            const path = `${process.cwd()}/resources/TestData.xlsx`;
+
+            const path = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData.xlsx` : `${process.cwd()}\\resources\\TestData.xlsx`;
             console.log(`Path --> ${path}`);
 
             // Load the workbook
