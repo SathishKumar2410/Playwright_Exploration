@@ -1,8 +1,9 @@
 import { readFile, utils } from 'xlsx';
 class TestDataReader {
     readExcelInJson(sheetName, testCaseId) {
-        const filePath = `${process.cwd()}\\resources\\TestData.xlsx`;
+        const filePath = `${process.cwd()}//resources//TestData.xlsx`;
         console.log(`Path --> ${filePath}`);
+
         const workbook = readFile(filePath);
         const sheet = workbook.Sheets[sheetName];
         const jsonData = utils.sheet_to_json(sheet);
@@ -15,8 +16,8 @@ class TestDataReader {
     getTestDataFromExcelSheet(sheetName, testCaseId) {
         try {
 
-            const path = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData.xlsx` : `${process.cwd()}\\resources\\TestData.xlsx`;
-            console.log(`Path --> ${path}`);
+          const filePath = `${process.cwd()}//resources//TestData.xlsx`;
+          console.log(`Path --> ${process.env.CI}`);
 
             // Load the workbook
             const workbook = readFile(path);
