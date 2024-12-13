@@ -2,7 +2,7 @@ import { readFile, utils } from 'xlsx';
 class TestDataReader {
 
     async readExcelInJson(sheetName, testCaseId) {
-        const filePath = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData1.xlsx` 
+        const filePath = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData.xlsx` 
         : `${process.cwd()}\\resources\\TestData.xlsx`;
         console.log("Path --> " + filePath);
 
