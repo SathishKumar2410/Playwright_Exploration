@@ -7,7 +7,7 @@ test.beforeEach('Launching URL',async ({ page }) => {
     await page.goto('https://www.saucedemo.com/inventory.html');
   });
   
-test.only('Login into the application', async ({ page }) => {
+test('Login into the application', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const testData = new TestDataReader(page);
    // const test = testData.readExcelInJson('Sheet1', 'TC002')
