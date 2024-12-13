@@ -2,29 +2,26 @@ import { readFile, utils } from 'xlsx';
 class TestDataReader {
 
     async readExcelInJson(sheetName, testCaseId) {
-        const filePath = `${process.cwd()}\\resources\\TestData.xlsx`;
-        console.log(`Path --> ${filePath}`);
+        const filePath = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData1.xlsx` 
+        : `${process.cwd()}\\resources\\TestData.xlsx`;
+        console.log("Path --> " + filePath);
 
-        const workbook = readFile(filePath);
+        const workbook = readFile(filePath, { cellDates: true, sheetStubs: true }); // Optional flags
         const sheet = workbook.Sheets[sheetName];
         const jsonData = utils.sheet_to_json(sheet);
 
         // Filter data for the specific Test Case ID
         const filteredData = jsonData.filter(data => data.Test_Case_ID === testCaseId);
+        console.log(filteredData);
         return filteredData; // Returns an array of objects
     }
 
     async getTestDataFromExcelSheet(sheetName, testCaseId) {
         try {
 
-          const filePath = `${process.cwd()}//resources//TestData.xlsx`;
-          console.log(`Path --> ${process.env.CI}`);
-          // const path = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/home/runner/work/PLAY/your-repo-name/resources/TestData.xlsx` : `${process.cwd()}\\resources\\TestData.xlsx`;
-           
-//            const filePath = process.env.CI 
-//   ? path.join(process.env.GITHUB_WORKSPACE, 'resources', 'TestData.xlsx')  // For GitHub Actions (CI)
-//   : path.join(process.cwd(), 'resources', 'TestData.xlsx');
-           console.log(`Path --> ${process.env.GITHUB_WORKSPACE}`);
+            const path = process.env.CI ? `${process.env.GITHUB_WORKSPACE}/resources/TestData.xlsx` 
+            : `${process.cwd()}\\resources\\TestData.xlsx`;
+            console.log(`Path --> ${path}`);
 
             // Load the workbook
             const workbook = readFile(path);
@@ -71,4 +68,4 @@ class TestDataReader {
         }
     }
 }
-module.exports = TestDataReader;
+export default TestDataReader;

@@ -1,0 +1,8 @@
+Path --> undefined
+Path --> undefined
+{
+  Test_Case_ID: 'TC002',
+  Username: 'locked_out_user',
+  Password: 'secret_sauce'
+}
+getByPlaceholder('Username')

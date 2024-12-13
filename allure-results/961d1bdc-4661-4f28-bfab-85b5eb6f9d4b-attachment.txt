@@ -1,0 +1,8 @@
+Path --> D:\Exploration\Playwright\Playwright_Exploration//resources//TestData.xlsx
+[
+  {
+    Test_Case_ID: 'TC002',
+    Username: 'locked_out_user',
+    Password: 'secret_sauce'
+  }
+]
